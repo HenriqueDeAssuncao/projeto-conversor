@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Conversor de temperaturas</h1>
+    <p>Digite a temperatura e selecione a sua escala termométrica:</p>
+    <input type="number" id="temp">
+    <button onclick="btnC()">Celcius</button>
+    <button onclick="btnF()">Fahrenheit</button>
+    <button onclick="btnK()">Kelvin</button>
+
+    <p id="mostrar"></p>
+</body>
+<script>
+    let temp = Number(document.getElementById('temp').value);
+    function btnC() {
+        let cF = (temp * 9/5) + 32;
+        let cK = (temp + 273.15);
+        document.getElementById('mostrar').innerHTML = `${temp} °C = ${cF} °F = ${cK} K `;
+    }
+    function btnF() {
+        let fC = (temp - 32) * 5/9;
+        let fK = (temp - 32) * 5/9 + 273.15;
+        document.getElementById('mostrar').innerHTML = `${temp} °F = ${fC} °C = ${fK} K `;
+    }
+    function btnK() {
+        let kF = (temp - 273.15) * 9/5 + 32;
+        let kC = temp - 273.15;
+        document.getElementById('mostrar').innerHTML = `${temp} K = ${kF} °F = ${kC} °C `;
+    }
+    
+</script>
+</html>
